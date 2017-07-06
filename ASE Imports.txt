@@ -29,3 +29,10 @@ from ase.io import read
 
 #Importing Units.
 from ase import units
+
+#Importing a module to find optimal cell shape.
+from ase.build import find_optimal_cell_shape
+
+
+#Importing a module to make a supercell.
+from ase.build import make_supercell
