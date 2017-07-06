@@ -1,0 +1,36 @@
+#Importing write function. Allows user to write an output file.
+from ase.io import write
+
+
+#Importing read function. Allows user to read an output file.
+from ase.io import read
+
+
+#Creating a .xyz file, contains atomic coordinates.
+write('file.xyz', slab)
+
+
+#Creating a .cube file, used in Gaussian cube file.
+write('file.cube', slab)
+
+
+#Creating a .pdb file, used in Protein data bank file.
+write('file.pdb', slab)
+
+
+#Creating a .traj file, used in ASE's own trajectory file formate.
+write('file.traj', slab)
+
+
+#Creating a .py file, used in Python file.
+write('file.py', slab)
+
+
+#Reading a file.
+name_from_file = read('file.xyz')
+
+
+#If file contains multiple configurations.
+read('file.traj') #last configuration.
+read('file.traj', -1) #last configuration.
+read('file.traj', 0) #first configuration.

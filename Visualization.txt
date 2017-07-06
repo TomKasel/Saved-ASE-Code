@@ -1,0 +1,8 @@
+#Importing generic ase.gui visualizer.
+from ase.zisualize import view
+view(object)
+
+
+#If you want to specify the vizualization software, i.e. VMD.
+#NOTE: data=array is VMD specific, do not use if not using VMD.
+view(object, viewer='viewer_software, data=array)

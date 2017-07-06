@@ -1,0 +1,27 @@
+#Some code is specific to the "Nitrogen on copper" introduction on ASE website.
+#It also includes generic examples.
+#NOTE slab 'generic' atom type != 'generic' atom type.
+
+
+#Importing fcc111 and add_absorbate.
+from ase.build import fcc111, add_absorbate
+
+
+#Creation of Generic slab.
+#NOTE: 'Generic' denotes the atom type Generic.
+#NOTE: size=(x, y, z)
+slab = fcc111('Generic', size=(x, y, z), vacuum=10.0)
+
+
+#Creation of absorbate on slab.
+#NOTE: This is specific to "Nitrogen on copper."
+#NOTE:add_absorbate(what it's being absorbed to, what is being absorbed, (?), 'where')
+h=1.85
+add_absorbate(slab, generic, h, 'ontop')
+
+
+#Creation of Cu slab.
+#NOTE: This is specific to "Nitrogen on copper."
+#NOTE: 'Cu' denotes the atom type Cu.
+#NOTE: size=(x, y, z)
+slab = fcc111('Cu', size=(4, 4, 2), vacuum=10.0)

@@ -1,0 +1,22 @@
+#Some code is specific to the "Nitrogen on copper" introduction on ASE website.
+#It also includes generic examples.
+
+
+#Importing Constraints (FixAtoms).
+from ase.constraints import FixAtoms
+
+
+#Creating constraint of fixing atom positions in Generic slab.
+#NOTE: 'generic' after != is NOT the same atom type as Generic slab. 'generic' is atom type of absorbate.
+#NOTE: mask=[a.symbol != 'generic' for a in slab] functionly stops atoms that are not identical to 'generic' 
+#from being structurally relaxed, i.e. they are "masked."
+constraint = Fixatoms(mask=[a.symbol != 'generic' for a in slab])
+slab.set_constraint(constraint)
+
+
+#Creating constraint of fixing atom positions in Generic slab.
+#NOTE: This is specific to "Nitrogen on copper."
+#NOTE: mask=[a.symbol != 'N' for a in slab] functionly stops atoms that are not identical to 'N' 
+#from being structurally relaxed, i.e. they are "masked."
+constraint = Fixatoms(mask=[a.symbol != 'N' for a in slab])
+slab.set_constraint(constraint)

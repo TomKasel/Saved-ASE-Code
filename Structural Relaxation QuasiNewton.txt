@@ -1,0 +1,18 @@
+#Some code is specific to the "Nitrogen on copper" introduction on ASE website.
+#It also includes generic examples.
+
+
+#Importing structual relaxation module (QuasiNewton).
+from ase.optimize import QuasiNewton
+
+
+#Run the minimizer with the convergence criteria that the force on all atoms should be less than some "fmax."
+#NOTE: (?)Creates a temporary trajectore file, "file.traj."
+dyn = QuasiNewton(Generic, trajectory='file.traj')
+dyn.run(fmax=#)
+
+
+#Run the minimizer with the convergence criteria that the force on all atoms should be less than some "fmax."
+#NOTE: This is specific to "Nitrogen on copper."
+dyn = QuasiNewton(slab, trajectory='N2Cu.traj')
+dyn.run(fmax=0.05)

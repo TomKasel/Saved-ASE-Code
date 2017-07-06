@@ -1,0 +1,92 @@
+#Some code is specific to the "Nitrogen on copper" introduction on ASE website.
+#It also includes generic examples.
+
+
+#Importing Atoms Module.
+from ase import Atoms
+
+
+#Distance between sheets.
+#NOTE: this is specific to "Nitrogen on copper."
+d = 1.10
+
+
+#Creation of generic atom.
+#NOTE: # specifics # of atoms and generic specifics type. '#generic' is an identification string.
+#NOTE: position = specifics (x, y, z) coordinates of each generic atom.
+#NOTE: The number of positions specific must equal the number of atoms specified.
+molecule = Atoms('#generic', positions=[(x, y, z), ...])
+
+
+#Creation of two Nitrogens on, and between, Copper slabs.
+#NOTE: This is specific to "Nitrogen on copper."
+#NOTE: 2N specifics # of atoms and N specifics type. '2N' is an identification string.
+#NOTE: position = specifics (x, y, z) coordinates of each N atom.
+molecule = Atoms('2N', positions=[(0., 0., 0.), (0., 0., d)])
+
+
+#Looking at coordinates of individual atoms in slab.
+>>>Generic = Atoms('Generic#', [(x(0), y(0), z(0)), (x(1), y(1), z(1)), ..., (x(#), y(#), z(#))]
+>>>Generic[0]
+Atom('Generic', [x(0), y(0), z(0)], index=0)
+>>>Generic[1]
+Atom('Generic', [x(1), y(1), z(1)], index=1)
+>>>Generic[2]
+Atom('Generic', [x(2), y(2), z(2)], index=2)
+>>>Generic[#]
+Atom('Generic', [x(#), y(#), z(#)], index=#)
+
+
+#To find number of atoms in 'Generic'
+>>>print "The number of atoms in this example is %s." % (len(Generic))
+"The number of atoms in this example is #."
+
+
+#Change the position of a specific coordinate of a specific atom in an array.
+#For example, we take 4 atoms defined by the positions
+>>>Generic[0]
+Atom('Generic', [0., 0., 0.], index=0)
+>>>Generic[1]
+Atom('Generic', [0.5, 0., 0.], index=1)
+>>>Generic[2]
+Atom('Generic', [0., 0.5, 0.], index=2)
+>>>Generic[3]
+Atom('Generic', [0., 0., 0.5], index=3)
+#We can print these positions as an array.
+>>>Generic.get_positions()
+array([[0., 0., 0. ],
+       [0.5, 0., 0.],
+       [0., 0.5, 0.],
+       [0., 0., 0.5]])
+#Change the position of a coordinate on an atom in this array.
+>>>Generic[0].x=1
+>>>Generic.get_positions()
+array([[1., 0., 0. ],
+       [0.5, 0., 0.],
+       [0., 0.5, 0.],
+       [0., 0., 0.5]])
+>>>Generic[1].y=1
+>>>Generic.get_positions()
+array([[1., 0., 0. ],
+       [0.5, 1., 0.],
+       [0., 0.5, 0.],
+       [0., 0., 0.5]])
+>>>Generic[2].z=1
+>>>Generic.get_positions()
+array([[1., 0., 0. ],
+       [0.5, 1., 0.],
+       [0., 0.5, 1.],
+       [0., 0., 0.5]])
+
+
+#Getting the unit cell for an array.
+#The atomic positions are listed below as well.
+>>>Generic.get_positions()
+array([[0., 0., 0. ],
+       [0.5, 0., 0.],
+       [0., 0.5, 0.],
+       [0., 0., 0.5]])
+>>>Generic.get_cell()
+array([[1., 0., 0.],
+       [0., 1., 0.],
+       [0., 0., 1.]])

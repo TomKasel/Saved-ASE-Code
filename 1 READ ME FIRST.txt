@@ -1,0 +1,8 @@
+This repository serves as a saving mechanism of Atomic Simulation Enviroment Python code for all future reference.
+All users attempting to edit, add, remove, or replace code please first contact the ADMINISTRATOR of this repository.
+This repository is open to all users currently working for, with, or in colusion with Dr. Christopher Hendon.
+
+#NOTE: When translating "Nitrogen on copper" from ASE website, Generic with a capital G denotes a generic
+#atom for the slab. generic with lowercase g denotes generic atom for the absorbate.
+#NOTE: if >>> is obmitted from an example, there is no output. The written code is only an input.
+#NOTE: if >>> is included in example, >>> denoted the input, and lines lacking >>> denote the output

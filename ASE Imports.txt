@@ -1,0 +1,31 @@
+#Importing Atom editor. Atoms allows position of nonslab atoms to be specified.
+from ase import Atom
+
+
+#Importing Slab creator and adsorbates. fcc111 allows for creation of a fcc111 slab configuration.
+#add_absorbate allows for absorbate molecule to interate with slab.
+from ase.build import fcc111, add_absorbate
+
+
+#Importing calculators. EMT is Effective Medium Theory.
+from ase.calculators.emt import EMT
+
+
+#Importing structure relaxation (QuasiNewton).
+from ase.optimize import QuasiNewton
+
+
+#Importing constraints (FixAtoms). Fixes positions of atoms as to be ignored by structure relaxation.
+from ase.constraints import FixAtoms
+
+
+#Importing write function. Allows user to write an output file.
+from ase.io import write
+
+
+#Importing read function. Allows user to read an output file.
+from ase.io import read
+
+
+#Importing Units.
+from ase import units
