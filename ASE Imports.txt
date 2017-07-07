@@ -1,3 +1,7 @@
+#Importing array funtionality from NumPy.
+import numpy as np
+
+
 #Importing Atom editor. Atoms allows position of nonslab atoms to be specified.
 from ase import Atom
 
