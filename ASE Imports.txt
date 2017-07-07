@@ -36,3 +36,7 @@ from ase.build import find_optimal_cell_shape
 
 #Importing a module to make a supercell.
 from ase.build import make_supercell
+
+
+#Importing a module to find deviation from optimal cell shape.
+from ase.build import get_deviation_from_optimal_cell_shape
